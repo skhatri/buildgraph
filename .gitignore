@@ -1,0 +1,15 @@
+
+# intellij
+.idea
+*.ipr
+*.iml
+*.iws
+out
+
+# gradle
+.gradle
+build
+
+# docker
+data
+

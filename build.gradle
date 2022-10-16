@@ -1,0 +1,41 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.4'
+    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'java'
+    id 'idea'
+}
+
+group = 'io.buildgraph'
+version = '0.1.2'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-graphql:2.7.4'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.7.4'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.7.4'
+    implementation 'org.springframework.boot:spring-boot-starter:2.7.4'
+    implementation 'com.datastax.oss:java-driver-core:4.15.0'
+    implementation 'com.datastax.oss:java-driver-query-builder:4.15.0'
+    implementation 'com.datastax.oss:java-driver-mapper-runtime:4.15.0'
+    implementation 'org.redisson:redisson:3.17.7'
+
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.4'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.4'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework:spring-webflux'
+    testImplementation 'org.springframework.graphql:spring-graphql-test'
+}
+
+
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+

@@ -1,0 +1,10 @@
+server.port: 8090
+
+graph:
+  server: "localhost:8182"
+
+queue:
+  server: "redis://localhost:6379"
+
+workload:
+  poll.timeout: 5

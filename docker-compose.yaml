@@ -1,0 +1,40 @@
+version: "3.7"
+volumes:
+  grafana: { }
+services:
+
+
+  cassandra:
+    image: "datastax/dse-server:6.8.26"
+    volumes:
+      - ./data/cassandra:/var/lib/cassandra
+    command:
+      - -g
+    networks:
+      graphn:
+        aliases:
+          - cassandra
+    environment:
+      - "DS_LICENSE=accept"
+      - "USER_DIR=/tmp"
+    expose:
+      - "9042"
+      - "8182"
+    ports:
+      - "8182:8182"
+      - "9042:9042"
+
+
+  redis:
+    image: "redis:alpine3.16"
+    networks:
+      graphn:
+        aliases:
+          - redis
+    expose:
+      - "6379"
+    ports:
+      - "6379:6379"
+
+networks:
+  graphn: { }
