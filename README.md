@@ -2,11 +2,13 @@
 BuildGraph is a dependency processor that will build up the dependency graph. It exposes queries to query dependencies.
 
 ### Design
+
 ```mermaid
 graph LR;
   events --> redis(Redis Queue)
   redis --> builder(Processor)
-  builder --> graph(Graph Database)
+  builder --> db(Graph Database)
+
 ```
 
 #### Run Locally
